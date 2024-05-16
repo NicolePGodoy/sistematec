@@ -1,0 +1,67 @@
+:root {
+    --azul-oscuro: #20494E;
+    --azul-medio: #556574;
+    --azul-claro: #CCE7EE;
+    --gris: #E1E6CD;
+    --marron: #C5774F;
+}
+
+.container-form {
+    background-color: var(--gris);
+    border: var(--azul-oscuro) 2px solid;
+    border-radius: 15px;
+}
+
+.boton-oscuro {
+    background-color: var(--azul-oscuro);
+    border: var(--azul-medio) 1px solid;
+    border-radius: 5px;
+}
+
+.boton-oscuro:hover {
+    background-color: var(--azul-medio);
+    border: var(--azul-oscuro) 1px solid;
+}
+
+.input-form {
+    height: 45px;
+}
+
+.bg-marron {
+    background-color: var(--marron);
+}
+
+
+.rating {
+    display: flex;
+}
+
+.rating input {
+    position: absolute;
+    left: -100vw;
+}
+
+.rating label {
+    width: 48px;
+    height: 48px;
+    padding: 48px 0 0;
+    overflow: hidden;
+    background: url('../assets/stars.svg') no-repeat top left;
+}
+
+.rating:not(:hover) input:indeterminate + label,
+.rating:not(:hover) input:checked ~ input + label,
+.rating input:hover ~ input + label{
+  background-position : -48px 0;
+}
+
+.rating:not(:hover) input:focus-visible + label{
+    background-position : -96px 0;
+}
+
+.bg-image {
+    background-image: url('../imagenes/portadabarber.jpg');
+    background-size: cover; 
+    background-position: center  ; 
+    background-repeat: no-repeat; 
+}
