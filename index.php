@@ -9,6 +9,7 @@
     <title>Login</title>
 </head>
 <body>
+    <!-- se crea una seccion para el formulario -->
     <section class="row mx-auto"> 
         <div class="bg-image">
             <div class="d-flex align-items-center" style="height: 100vh;">
@@ -16,6 +17,8 @@
                     <div class="text-center mb-5">
                         <h1>Login</h1>
                     </div>
+                    <!-- se crea el formulario con sus repectivos campos -->
+                    <!-- atributo action especifica la url del script que procesará los datos del form con metodo post -->
                     <form class="px-md-4" action="/php/users.php" method="POST">
                         <div class="mb-4">
                             <input type="text" class="form-control input-form" id="correo" name="correo" placeholder="Usuario">
@@ -24,8 +27,10 @@
                             <input type="password" class="form-control input-form" id="contraseña" name="contraseña" placeholder="Contraseña">
                         </div>
                         <div class="d-flex justify-content-center">
+                            <!-- se agrega botón para enviar los dtos al formulario y guardar el registro -->
                             <button type="submit" class="btn btn-primary boton-oscuro px-5 py-2">Validar</button>
                         </div>
+                        <!-- se coloca un campo de entrada oculto para enviar el formulario con valor login  -->
                         <input type="hidden" name="type" value="login">
                         <div class="text-center mt-4">
                             <a href="/registro.php">Registrarme</a>
