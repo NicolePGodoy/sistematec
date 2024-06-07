@@ -51,7 +51,7 @@
                         <a class="nav-link" aria-current="page" href="./adminservicios.php">Administrar sevicios</a>
                     </li> 
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="./adminusuarios.html">Administrar usuarios</a>
+                        <a class="nav-link" aria-current="page" href="./adminusuarios.php">Administrar usuarios</a>
                     </li>       
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="./reportes.html">Reportes</a>
