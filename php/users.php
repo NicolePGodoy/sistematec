@@ -1,14 +1,5 @@
 <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "sistematec";
-
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    
-    if ($conn->connect_error) {
-        die("Conexión fallida: " . $conn->connect_error);
-    }
+    include_once 'connectionDB.php';
 
     if($_POST['type'] == 'crear') {
         $name = $_POST['name'];

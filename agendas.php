@@ -15,14 +15,8 @@
 
 <body>   
     <?php
-    // credenciales para conectarse a la db
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "sistematec";
-        // coneccion a db con mysql 
-        $conn = new mysqli($servername, $username, $password, $dbname);
-
+        include_once 'php/connectionDB.php';
+        
         $res_barbers = $conn->query("SELECT id, name, lastname FROM users WHERE rol = 'barber';");
         $res_services = $conn->query("SELECT * FROM services");
 

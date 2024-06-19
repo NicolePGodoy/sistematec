@@ -16,8 +16,17 @@
 
 <body>
     <?php include_once 'sections/header.php' ?>
-    <div class="text-center my-5">
-        <h1>Generar Reportes</h1>
+    <div class="container my-5">
+        <div class="row align-items-center">
+            <div class="col">
+                <h1>Reportes Creados</h1>
+            </div>
+            <div class="col text-end">
+                <a href="adminreportes.php">
+                    <button class="btn btn-success">Nuevo Reporte</button>
+                </a>
+            </div>
+        </div>
     </div>
     <section class="py-5 mx-4 mb-5">
         <div class="table-responsive">
