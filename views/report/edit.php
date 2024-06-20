@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Edit Report</title>
-</head>
-<body>
+
     <h1>Edit Report</h1>
     <form method="post" action="<?php echo BASE_URL; ?>report/edit/<?php echo $report['id']; ?>">
         <label>Title:</label>
@@ -18,5 +13,4 @@
         <button type="submit">Update</button>
     </form>
     <a href="<?php echo BASE_URL; ?>report/index">Back to Reports</a>
-</body>
-</html>
+
