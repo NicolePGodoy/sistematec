@@ -15,51 +15,13 @@
 
 <body>   
     <?php
-    // credenciales para conectarse a la db
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "sistematec";
-        // coneccion a db con mysql 
-        $conn = new mysqli($servername, $username, $password, $dbname);
-
+        include_once 'php/connectionDB.php';
+        
         $res_barbers = $conn->query("SELECT id, name, lastname FROM users WHERE rol = 'barber';");
         $res_services = $conn->query("SELECT * FROM services");
 
     ?>
-    <!-- se crea una nav brand por los diferentes modulos -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-marron">
-        <div class="container-fluid">
-            <!-- se agrega el logo de la pagina  -->
-            <a class="navbar-brand" href="./agendas.php"> <img src="./imagenes/LOGO-removebg-preview.png" atl="logo sistematec" width="100" weight="50" tittle="logo"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <!-- se genera una lista sin orden especifico o ul -->
-                <ul class="navbar-nav">
-                    <!-- se definen los elementos de la lista -->
-                    <li class="nav-item">
-                        <!-- se genera un enlace para navegar por las distinatas partes de la página  -->
-                        <a class="nav-link active" aria-current="page" href="./agendas.php">Agendas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="./puntuaciones.php">Puntuar Barbero</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="./adminservicios.php">Administrar sevicios</a>
-                    </li> 
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="./adminusuarios.php">Administrar usuarios</a>
-                    </li>       
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="./reportes.html">Reportes</a>
-                    </li>       
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <?php include_once 'sections/header.php' ?>
     <!-- di para colocar el titulo agendar citas -->
     <div class="text-center my-5">
         <h1>Agendar citas</h1>

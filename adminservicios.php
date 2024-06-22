@@ -21,6 +21,7 @@
             return respuesta
         }
     </script>
+<<<<<<< HEAD
     <nav class="navbar navbar-expand-lg navbar-dark bg-marron">
         <div class="container-fluid">
             <a class="navbar-brand" href="./agendas.php"> <img src="./imagenes/LOGO-removebg-preview.png" atl="logo sistematec" width="100" weight="50" tittle="logo"></a>
@@ -48,6 +49,9 @@
             </div>
         </div>
     </nav>
+=======
+    <?php include_once 'sections/header.php' ?>
+>>>>>>> 61d15c200ff1aff85cfe0aea6a11b576d056e520
     <div class="text-center my-3">
         <h1>Administrar servicios</h1>
         <?php
