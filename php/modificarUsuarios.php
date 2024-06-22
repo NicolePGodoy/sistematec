@@ -6,10 +6,10 @@ if (!empty($_POST["btncreate"])){
         #$id=$_POST["id"];
         $id=$_POST["id"];
         $name=$_POST["name"];
+        $lastname=$_POST["lastname"];
         $correo=$_POST["correo"];
-        $password=$_POST["password"];
         $rol=$_POST["rol"];
-        $sql=$conexion->query("update users set name='$name', lastname='$lastname' , correo='$correo' , password='$password' where id=$id");
+        $sql=$conexion->query("update users set name='$name', lastname='$lastname' , correo='$correo' , rol='$rol' where id=$id");
         if ($sql==1) {
             # condicional para validar si se ha modificado o no se ha modificado
             header("location:adminusuarios.php");

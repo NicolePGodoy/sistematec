@@ -14,10 +14,10 @@
 </head>
 
 <body>
-     <!--Boton script que llama la funcion eliminar declara una variable respuesta que confirma en pantalla si deseo o no eliminar el servicio -->
-     <script> 
-        function eliminar(){
-            var respuesta=confirm("Estas seguro que deseas eliminar");
+    <!--Boton script que llama la funcion eliminar declara una variable respuesta que confirma en pantalla si deseo o no eliminar el servicio -->
+    <script>
+        function eliminar() {
+            var respuesta = confirm("Estas seguro que deseas eliminar");
             return respuesta
         }
     </script>
@@ -33,7 +33,7 @@
                         <a class="nav-link" aria-current="page" href="./agendas.php">Agendas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="./puntuaciones.html">Puntuar Barbero</a>
+                        <a class="nav-link" aria-current="page" href="./puntuaciones.php">Puntuar Barbero</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link " aria-current="page" href="./adminservicios.php">Administrar sevicios</a>
@@ -56,74 +56,46 @@
         ?>
     </div>
     <div class="container-fluid row">
-        <form class="col-3 p-3" method="POST">
-            <h5 class="text-center text-secondary">Registro de usuarios</h5>
-            <?php
-            include "php/registroUsuarios.php";
-            ?>
-            <!--<div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">id</label>
-                <input type="text" class="form-control" name="id">
-            </div>-->
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">name</label>
-                <input type="text" class="form-control" name="name">
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">lastname</label>
-                <input type="text" class="form-control" name="lastname">
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">correo</label>
-                <input type="text" class="form-control" name="correo">
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">password</label>
-                <input type="text" class="form-control" name="password">
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">rol</label>
-                <input type="text" class="form-control" name="rol">
-            </div>
-            <button type="submit" class="btn btn-primary" name="btncreate" value="ok">Registrar</button>
-        </form>
-        <div class="col-9 p-3">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">TIPO</th>
-                        <th scope="col">NOMBRE</th>
-                        <th scope="col">CORREO</th>
-                        <th scope="col">ROL</th>
-                        <th scope="col">ACTION</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                    include "php/conexionadminUsuarios.php";
-                    $sql = $conexion->query("select * from users");
-                    $id_cod = 1;
-                    while ($datos = $sql->fetch_object()) { ?>
+        <div class="text-center my-5">
+            <div class="col-12 p-1">
+                <table class="table">
+                    <thead>
                         <tr>
-                            <td><?= $datos->id ?></td>
-                            <td><?= $datos->name ?></td>
-                            <td><?= $datos->lastname ?></td>
-                            <td><?= $datos->correo ?></td>
-                            <td><?= $datos->rol ?></td>
-                            <td>
-                                <!-- Modificacion del boton para que tome la ruta de php/modificarusuario.php y al precionar el boton debe llevar el id
+                            <th scope="col">ID</th>
+                            <th scope="col">NOMBRE</th>
+                            <th scope="col">APELLIDO</th>
+                            <th scope="col">CORREO</th>
+                            <th scope="col">ROL</th>
+                            <th scope="col">ACTION</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        include "php/conexionadminUsuarios.php";
+                        $sql = $conexion->query("select * from users");
+                        $id_cod = 1;
+                        while ($datos = $sql->fetch_object()) { ?>
+                            <tr>
+                                <td><?= $id_cod ?></td>
+                               <!-- <td><?= $datos->id ?></td>-->
+                                <td><?= $datos->name ?></td>
+                                <td><?= $datos->lastname ?></td>
+                                <td><?= $datos->correo ?></td>
+                                <td><?= $datos->rol ?></td>
+                                <td>
+                                    <!-- Modificacion del boton para que tome la ruta de php/modificarusuario.php y al precionar el boton debe llevar el id
                                  y ese id se debe enviar a la vista de modificarusuario.php esto me va a permitir hacer una consulta a la base de datos
                                 y ademas quiero que me envie un valor dentro de una variable-->
-                                <a href="modificarUsuario.php?id=<?= $datos->id ?>" class="btn btn-small btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
-                                <a onclick="return eliminar()" href="adminusuarios.php?id=<?= $datos->id ?>" class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></a>
-                            </td>
-                        </tr>
-                    <?php
-                    $id_cod++;
-                    }
-                    ?>
-                </tbody>
+                                    <a href="modificarUsuario.php?id=<?= $datos->id ?>" class="btn btn-small btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+                                    <a onclick="return eliminar()" href="adminusuarios.php?id=<?= $datos->id ?>" class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></a>
+                                </td>
+                            </tr>
+                        <?php
+                            $id_cod++;
+                        }
+                        ?>
+                    </tbody>
+            </div>
         </div>
     </div>
     </table>

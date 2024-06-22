@@ -22,6 +22,16 @@ $sql = $conexion->query(" select * from users where id=$id ");
         <h5 class="text-center text-secondary">Modificar usuarios</h5>
         <input type="hidden" name="id" value="<?= $_GET["id"] ?>">
         <?php
+        // credenciales para conectarse a la db
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "sistematec";
+        // coneccion a db con mysql 
+        $conn = new mysqli($servername, $username, $password, $dbname);
+
+        $res_rol = $conn->query("SELECT DISTINCT rol FROM users WHERE rol IN ('admin','user','barber');");
+
         include "php/modificarUsuarios.php";
         /*para mostrar los datos...
          mientas que en sql hayan registros, quiero que se almacenen en la variable $datos*/
@@ -44,12 +54,20 @@ $sql = $conexion->query(" select * from users where id=$id ");
                 <input type="text" class="form-control" name="correo" value="<?= $datos->correo ?>">
             </div>
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">password</label>
-                <input type="text" class="form-control" name="password" value="<?= $datos->password ?>">
+                <div class="mb-5 col-md-6">
+                <!-- se crea ptra opcion de seleccion para "rol"  -->
+                <select class="form-select input-form" name="rol">
+                    <!-- etiqueta opcion para desplegar la seleccion de rol -->
+                    <option selected>Seleccione un rol</option>
+                      <!-- se crea el bucle while para iterar sobre los datos de una consulta a la db  -->
+                     <!-- la variable $rest_rol es el conjunto de resultados obtenidos a una consulta a la db -->
+                    <?php while($row = $res_rol->fetch_assoc()): ?>
+                        <!-- se imprime el valor de la columna id, seguido del rol -->
+                        <option value="<?php echo $row['rol'] ?>"><?php echo $row['rol']?></option>
+                        <!-- final del bucle cuando se decida la opcion -->
+                    <?php endwhile; ?>
+                </select>
             </div>
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">rol</label>
-                <input type="text" class="form-control" name="rol" value="<?= $datos->rol ?>">
             </div>
         <?php }
         ?>
