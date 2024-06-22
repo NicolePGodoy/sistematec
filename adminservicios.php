@@ -33,7 +33,7 @@
                         <a class="nav-link" aria-current="page" href="./agendas.php">Agendas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="./puntuaciones.html">Puntuar Barbero</a>
+                        <a class="nav-link" aria-current="page" href="./puntuaciones.php">Puntuar Barbero</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="./adminservicios.php">Administrar sevicios</a>
