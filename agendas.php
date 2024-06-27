@@ -36,13 +36,13 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="./agendas.html">Agendas</a>
+                        <a class="nav-link active" aria-current="page" href="./agendas.php">Agendas</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="./puntuaciones.html">Puntuar Barbero</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="./adminservicios.html">Administrar sevicios</a>
+                        <a class="nav-link" aria-current="page" href="./adminservicios.php">Administrar sevicios</a>
                     </li> 
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="./adminusuarios.html">Administrar usuarios</a>
