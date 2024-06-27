@@ -15,36 +15,18 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-marron">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="./agendas.html"> <img src="./imagenes/LOGO-removebg-preview.png" atl="logo sistematec" width="100" weight="50" tittle="logo"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="./agendas.html">Agendas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="./puntuaciones.html">Puntuar Barbero</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link " aria-current="page" href="./adminservicios.html">Administrar sevicios</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="./adminusuarios.html">Administrar usuarios</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="./reportes.html">Reportes</a>
-                    </li>
-                </ul>
+    <?php include_once 'sections/header.php' ?>
+    <div class="container my-5">
+        <div class="row align-items-center">
+            <div class="col">
+                <h1>Reportes Creados</h1>
+            </div>
+            <div class="col text-end">
+                <a href="adminreportes.php">
+                    <button class="btn btn-success">Nuevo Reporte</button>
+                </a>
             </div>
         </div>
-    </nav>
-    <div class="text-center my-5">
-        <h1>Generar Reportes</h1>
     </div>
     <section class="py-5 mx-4 mb-5">
         <div class="table-responsive">

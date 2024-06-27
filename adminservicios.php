@@ -21,33 +21,7 @@
             return respuesta
         }
     </script>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-marron">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="./agendas.html"> <img src="./imagenes/LOGO-removebg-preview.png" atl="logo sistematec" width="100" weight="50" tittle="logo"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="./agendas.php">Agendas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="./puntuaciones.html">Puntuar Barbero</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="./adminservicios.php">Administrar sevicios</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="./adminusuarios.html">Administrar usuarios</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="./reportes.html">Reportes</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <?php include_once 'sections/header.php' ?>
     <div class="text-center my-3">
         <h1>Administrar servicios</h1>
         <?php
@@ -62,10 +36,10 @@
 
             include "php/registroNuevoServicio.php";
             ?>
-            <div class="mb-3">
+            <!-- <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">id</label>
                 <input type="text" class="form-control" name="id">
-            </div>
+            </div> -->
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Description</label>
                 <input type="text" class="form-control" name="description">
@@ -81,6 +55,7 @@
                 <thead>
                     <tr>
                         <th scope="col">ID</th>
+                        <!-- <th scope="col">ID_DB</th> -->
                         <th scope="col">Description</th>
                         <th scope="col">Price</th>
                         <th scope="col">Action</th>
@@ -90,9 +65,11 @@
                     <?php
                     include "php/conexionadminServicios.php";
                     $sql = $conexion->query("select * from services");
+                    $id_cod = 1;
                     while ($datos = $sql->fetch_object()) { ?>
                         <tr>
-                            <td><?= $datos->id ?></td>
+                            <td><?= $id_cod ?></td>
+                            <!-- <td><?= $datos->id ?></td> -->
                             <td><?= $datos->description ?></td>
                             <td><?php print "$ " ?> <?= $datos->price ?></td>
                             <td>
@@ -104,6 +81,7 @@
                             </td>
                         </tr>
                     <?php
+                    $id_cod++;
                     }
                     ?>
                 </tbody>
