@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <?php include_once 'sections/header.php' ?>
+    <?php // include_once 'sections/header.php' ?>
     <div class="text-center my-5">
         <h1>Puntuar barbero</h1>
     </div>
